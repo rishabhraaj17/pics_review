@@ -1,0 +1,25 @@
+.resize {
+  height: 80%;
+  width: 80%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.fixdiv {
+  height: auto;
+  width: auto;
+  margin-right: 2%;
+  margin-left: 4%;
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+
+.otherprops {
+  margin-bottom: 2%;
+}
+
+.fixbutton {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 2%;
+}

@@ -1,0 +1,24 @@
+<div class="jumbotron jumbotron-fluid" style="background-color: aquamarine">
+  <div class="container">
+    <h1 class="display-5">Results</h1>
+    <p class="lead" style="margin-bottom: 5%">Results of Validation</p>
+  </div>
+</div>
+
+<div class="jumbotron jumbotron-fluid" style="background-color: lavender">
+  <ul>
+    <li *ngFor="let c of car; index as i">
+      <div class="border border-primary fixdiv">
+        <ul>
+          <li>{{i+1}}</li>
+          <li>
+            <img src= {{c.imgSrc}} class="img-fluid resize" alt="Responsive image">
+          </li>
+          <li class="otherprops"> {{c.year}} </li>
+          <li class="otherprops"> {{c.color}}</li>
+          <li class="otherprops"> {{c.correct}} </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>

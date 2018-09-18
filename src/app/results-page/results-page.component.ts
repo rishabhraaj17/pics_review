@@ -25,7 +25,8 @@ export class ResultsPageComponent implements OnInit {
   }
 
   deleteSelected(i) {
-    this.carResultService.deleteCar(i).subscribe();
+    this.carResultService.deleteCar(i).subscribe(() => this.carResultService.getCarsResult().subscribe((c: CarResult[]) => {
+      this.car = c;}));
   }
 
 }

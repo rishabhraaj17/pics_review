@@ -28,13 +28,10 @@ export class CarResultService {
   populateResults(car: CarModel, correct: boolean) {
     this.result = <CarResult>car;
     this.result.correct = correct;
-    //this.results.push(this.result);
     this.addHero(this.result).subscribe(value => this.results.push(value));
-    console.log(JSON.stringify(this.result));
   }
 
   addHero (hero: CarResult): Observable<CarResult> {
-    console.log("Sending Post");
     return this.http.post<CarResult>('http://localhost:3001/carResult', JSON.stringify(hero), httpOptions)
       .pipe();
   }

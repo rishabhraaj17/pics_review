@@ -22,7 +22,8 @@ export class CarServiceService {
   }
 
   updateCar (car: CarModel): Observable<CarModel> {
-    return this.http.put<CarModel>('http://localhost:3000/cars', car, httpOptions)
+    console.log(car);
+    return this.http.put<CarModel>('http://localhost:3000/cars/'+car.id, JSON.stringify(car), httpOptions)
       .pipe();
   }
 }

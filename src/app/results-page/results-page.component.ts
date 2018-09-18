@@ -20,7 +20,6 @@ export class ResultsPageComponent implements OnInit {
     this.cars = this.carResultService.getCarsResult();
     this.cars.subscribe((c: CarResult[]) => {
       this.car = c;
-      console.log(this.car)
     } );
   }
 

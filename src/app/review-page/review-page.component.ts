@@ -21,19 +21,20 @@ export class ReviewPageComponent implements OnInit {
    this.cars = this.carService.getCars();
    this.cars.subscribe((c: CarModel[]) => {
      this.car = c;
-     console.log(this.car)
    } )
   }
 
   clickCorrect(car: CarModel, correct: boolean) {
     this.messageService.add({severity:'success', summary:'Correct!', detail:'Marked as correct.'});
     car.review = "Reviewed as Correct";
+    this.update(car);
     this.carResultService.populateResults(car, correct);
   }
 
   clickInCorrect(car: CarModel, correct: boolean) {
     this.messageService.add({severity:'warn', summary:'Inorrect!', detail:'Marked as incorrect.'});
     car.review = "Reviewed as Incorrect";
+    this.update(car);
     this.carResultService.populateResults(car, correct);
   }
 

@@ -40,7 +40,9 @@ export class ReviewPageComponent implements OnInit {
 
   undoThis(i) {
     this.messageService.add({severity:'info', summary:'Undo!', detail:'Changes Reverted! Select your choice again.'});
-    this.carResultService.deleteCar(i).subscribe();
+    this.carResultService.deleteCar(i.id).subscribe();
+    i.review = "";
+    this.update(i);
   }
 
   onTop(){

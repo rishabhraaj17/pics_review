@@ -18,7 +18,7 @@
           </li>
           <li class="otherprops"> {{c.year}} </li>
           <li class="otherprops"> {{c.color}}</li>
-          <li id="logStatus" class="alert alert-info"></li>
+          <li id="logStatus" class="alert alert-info"> {{c.review}} </li>
         </ul>
         <a class="btn btn-success btn-lg fixbutton" (click)="clickCorrect(c, true)" role="button">Correct</a>
         <a class="btn btn-danger btn-lg fixbutton" (click)="clickInCorrect(c, false)" role="button">Incorrect</a>

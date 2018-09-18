@@ -27,24 +27,27 @@ export class ReviewPageComponent implements OnInit {
 
   clickCorrect(car: CarModel, correct: boolean) {
     this.messageService.add({severity:'success', summary:'Correct!', detail:'Marked as correct.'});
+    car.review = "Reviewed as Correct";
     this.carResultService.populateResults(car, correct);
-    document.getElementById("logStatus").innerHTML = "Reviewed as Correct!";
   }
 
   clickInCorrect(car: CarModel, correct: boolean) {
     this.messageService.add({severity:'warn', summary:'Inorrect!', detail:'Marked as incorrect.'});
+    car.review = "Reviewed as Incorrect";
     this.carResultService.populateResults(car, correct);
-    document.getElementById("logStatus").innerHTML = "Reviewed as Incorrect!";
   }
 
   undoThis(i) {
     this.messageService.add({severity:'info', summary:'Undo!', detail:'Changes Reverted! Select your choice again.'});
     this.carResultService.deleteCar(i).subscribe();
-    document.getElementById("logStatus").innerHTML = "";
   }
 
   onTop(){
     document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }
+
+  update(car: CarModel) {
+    this.carService.updateCar(car).subscribe();
   }
 
 }

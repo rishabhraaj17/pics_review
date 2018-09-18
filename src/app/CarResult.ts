@@ -4,4 +4,5 @@ export interface CarResult {
   year: string;
   color: string;
   correct: boolean;
+  review: string;
 }

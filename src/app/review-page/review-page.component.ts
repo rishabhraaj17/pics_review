@@ -43,4 +43,8 @@ export class ReviewPageComponent implements OnInit {
     document.getElementById("logStatus").innerHTML = "";
   }
 
+  onTop(){
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }
+
 }

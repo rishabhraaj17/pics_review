@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CarResult } from "../CarResult";
 import { CarResultService } from "../car-result.service";
 import {Observable} from "rxjs";
-import {CarModel} from "../CarModel";
+import {MessageService} from 'primeng/api';
 
 @Component({
   selector: 'app-results-page',
@@ -14,7 +14,7 @@ export class ResultsPageComponent implements OnInit {
   cars: Observable<CarResult[]>;
   car: CarResult[];
 
-  constructor(private carResultService: CarResultService) { }
+  constructor(private carResultService: CarResultService, private messageService: MessageService) { }
 
   ngOnInit() {
     this.cars = this.carResultService.getCarsResult();
@@ -27,6 +27,11 @@ export class ResultsPageComponent implements OnInit {
   deleteSelected(i) {
     this.carResultService.deleteCar(i).subscribe(() => this.carResultService.getCarsResult().subscribe((c: CarResult[]) => {
       this.car = c;}));
+    this.messageService.add({severity:'error', summary:'Deleted!', detail:'Review Deleted'});
+  }
+
+  onTop(){
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
   }
 
 }

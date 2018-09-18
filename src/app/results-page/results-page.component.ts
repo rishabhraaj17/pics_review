@@ -24,4 +24,8 @@ export class ResultsPageComponent implements OnInit {
     } );
   }
 
+  deleteSelected(i) {
+    this.carResultService.deleteCar(i).subscribe();
+  }
+
 }

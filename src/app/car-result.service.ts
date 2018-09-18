@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { CarResult } from "./CarResult";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {CarModel} from "./CarModel";
-import {catchError} from "rxjs/operators";
 import {Observable} from "rxjs";
 
 const httpOptions = {

@@ -11,11 +11,15 @@ import {AppRoutingModule} from "./app-routing.module";
 import {HttpClientModule} from "@angular/common/http";
 import {ToastModule} from 'primeng/toast';
 import { BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ChartModule} from 'primeng/chart';
 
 import {DataViewModule} from 'primeng/dataview';
 
 import {CarServiceService} from "./car-service.service";
 import {MessageService} from "primeng/api";
+import { StatComponent } from './stat/stat.component';
+import {CarResultService} from "./car-result.service";
+import {StatService} from "./stat.service";
 
 
 @NgModule({
@@ -24,7 +28,8 @@ import {MessageService} from "primeng/api";
     ReviewPageComponent,
     ResultsPageComponent,
     HomePageComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    StatComponent
   ],
   imports: [
     BrowserModule,
@@ -32,9 +37,10 @@ import {MessageService} from "primeng/api";
     DataViewModule,
     HttpClientModule,
     ToastModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ChartModule
   ],
-  providers: [CarServiceService, MessageService],
+  providers: [CarServiceService, MessageService, CarResultService, StatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
